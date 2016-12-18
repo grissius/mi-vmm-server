@@ -2,10 +2,10 @@ const colorExporter = require('../controllers/colorExporter');
 
 module.exports = app => {
 
-    // app.use((req, res, next) => {
-    //     console.log(`mdw`);
-    //     next();
-    // });
+    app.use((req, res, next) => {
+        res.setHeader('Access-Control-Allow-Origin','*');
+        next();
+    });
 
     app.get('/hello', (req, res, next) => {
         res.status(200);

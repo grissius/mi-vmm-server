@@ -12,5 +12,5 @@ exports.stealColor = (url) => {
         uri: url,
         encoding: null
     })
-        .then(buffer => colorThief.getColor(buffer));
+        .then(buffer => colorThief.getPalette(buffer, 5).slice(0,3));
 };
